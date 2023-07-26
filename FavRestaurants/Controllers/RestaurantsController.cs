@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using FavRestaurants.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace FavRestaurants.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
             return View();
         }
 
@@ -47,6 +49,7 @@ namespace FavRestaurants.Controllers
         public ActionResult Edit(int id)
         {
             Restaurant thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+            ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
             return View(thisRestaurant);
         }
 
