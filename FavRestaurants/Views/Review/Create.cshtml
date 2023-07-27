@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model FavRestaurants.Models.Review
+
+<h4>Add a new Review</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Title)
+  @Html.TextBoxFor(model => model.Title)
+
+  @Html.LabelFor(model => model.Body)
+  @Html.TextAreaFor(model => model.Body)
+  <input type="submit" value="Add new Cuisine" />
+}
+<p>@Html.ActionLink("Show all Reviews", "Index")</p>

@@ -1,0 +1,12 @@
+.sidebar {
+    width: 300px;
+    border: 12px solid rgb(204, 204, 59);
+    padding: 50px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  h1 {
+    color: red;
+  }
